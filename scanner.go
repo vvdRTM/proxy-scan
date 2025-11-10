@@ -95,7 +95,7 @@ func saveToCSV(hosts []string, filename string) error {
 }
 
 func main() {
-    subnet := "192.168.34.0/24"
+    subnet := "192.168.35.0/24"
     fmt.Println("Сканирование сети:", subnet)
     hosts := scanNetwork(subnet)
     fmt.Printf("Найдено активных хостов: %d\n", len(hosts))
