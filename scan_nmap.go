@@ -6,7 +6,6 @@ import (
     "fmt"
     "os"
     "os/exec"
-    "strings"
     "time"
 )
 
@@ -48,7 +47,7 @@ type OSMatch struct {
 }
 
 func runNmapScan(subnet string) ([]Host, error) {
-    cmd := exec.Command("nmap", "-O", "-sP", "--osscan-guess", "-oX", "-", subnet)
+    cmd := exec.Command("nmap", "-O", "-sS", "--osscan-guess", "-oX", "-", subnet)
     output, err := cmd.Output()
     if err != nil {
         return nil, err
